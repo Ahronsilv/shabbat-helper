@@ -1,7 +1,7 @@
 language: swift
 osx_image: xcode13
 env:
-- DESTINATION="OS=15.0,name=iPhone 12" SCHEME="shabbat-helper" SDK=iphonesimulator
+- DESTINATION="OS=14.0,name=iPhone 11" SCHEME="shabbat-helper" SDK=iphonesimulator
 
 script:
 - xcodebuild -workspace shabbat-helper.xcworkspace -scheme shabbat-helper -configuration "Release" -sdk iphonesimulator
