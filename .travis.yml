@@ -1,8 +1,7 @@
 language: swift
 osx_image: xcode13
 env:
-- DESTINATION="OS=15.0,name=iPhone 12" SCHEME="XLProductName" SDK=iphonesimulator15.0
+- DESTINATION="OS=15.0,name=iPhone 12" SCHEME="XLProductName" SDK=iphonesimulator
 
 script:
-- xcodebuild -workspace shabbat-helper.xcworkspace -scheme shabbat-helper -configuration "ProdAdHoc" -sdk iphonesimulator15.0
-
+- xcodebuild -workspace shabbat-helper.xcworkspace -scheme shabbat-helper -configuration "Release" -sdk iphonesimulator
