@@ -1,0 +1,22 @@
+language: swift
+osx_image: xcode13
+env:
+- DESTINATION="OS=15.0,name=iPhone 12" SCHEME="XLProductName" SDK=iphonesimulator15.0
+
+before_install:
+  - git submodule update --init --recursive
+
+  - brew install go
+  - go get -u golang.org/x/mobile/cmd/gomobile
+  - export PATH=$PATH:~/go/bin
+  - gomobile init
+  - ./update-go-framework.sh
+
+  - gem install cocoapods
+  - gem update concurrent-ruby
+  - pod setup
+
+
+script:
+- xcodebuild -workspace shabbat-helper.xcworkspace -scheme shabbat-helper -configuration "ProdAdHoc" -sdk iphonesimulator15.0
+
